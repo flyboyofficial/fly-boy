@@ -978,6 +978,13 @@ p,
   background-position: right;
 }
 
+@media (min-width: 1199.98px) and (max-width: 1400px) {
+  .flyboy-collections .swiper-slide {
+    width: 254px;
+    height: 374px;
+  }
+}
+
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .btn {
     padding: 10px 30px;
@@ -992,6 +999,10 @@ p,
   }
   .roadmap-slid .next-arrow {
     right: 3%;
+  }
+  .flyboy-collections .swiper-slide {
+    width: 254px;
+    height: 374px;
   }
 }
 
@@ -1076,6 +1087,7 @@ p,
   .flyboy-collections {
     padding-top: 7px;
     padding-bottom: 15px;
+    max-width: 412px;
   }
   .roadmap-area {
     padding: 60px 0 65px;
@@ -1155,16 +1167,33 @@ p,
   .pb-100 {
     padding-bottom: 60px;
   }
+  .fly-boy-area .fly-text {
+    text-align: center;
+  }
+  .fly-boy-area .fly-btn {
+    text-align: center;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .flyboy-collections .swiper-slide {
+    width: 160px;
+    height: 220px;
+  }
+  .flyboy-collections {
+    max-width: 340px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 375px) {
   .flyboy-collections .swiper-slide {
-    width: 180px;
-    height: 245px;
+    width: 160px;
+    height: 220px;
   }
   .btn {
-    padding: 10px 21px;
-    font-size: 17px;
+    padding: 10px 15px;
+    font-size: 16px;
   }
   .footer-area .footer-content {
     display: block;
