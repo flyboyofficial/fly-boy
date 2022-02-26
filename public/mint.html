@@ -199,7 +199,7 @@
                 if (sale_state != 0) {
                     const account = await getAccount();
                     if (sale_state == 1) {
-                        const url = 'https://flyboyofficial.github.io/whitelist.json';
+                        const url = 'whitelist.json';
                         getJSON(url, function(err, data) {
                            if (err !== null) {
                             window.alert('Something went wrong: ' + err);
