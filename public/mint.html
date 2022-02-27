@@ -213,7 +213,7 @@
                              if (found == true){
                                     presaleMint(account).catch(e => {
                                        if (e.message.includes('insufficient funds')) {
-                                       alert('You have insufficient funds to mint this NFT');
+                                       alert('You have insufficient funds to mint.');
                                     }
                                     else {
                                        alert(e.message);
@@ -221,7 +221,7 @@
                                     });
                              }
                              else {
-                               alert("Account is not Whitelisted!")
+                               alert("Your wallet is not whitelisted.")
                              }     
                            }
                         });
@@ -229,7 +229,7 @@
                     else {
                         publicSaleMint(account).catch(e => {
                            if (e.message.includes('insufficient funds')) {
-                              alert('You have insufficient funds to mint this NFT');
+                              alert('You have insufficient funds to mint.');
                            }
                            else {
                               alert(e.message);
@@ -238,7 +238,7 @@
                     }
                 }
                 else {
-                    window.alert('Sale is not open yet!')
+                    window.alert('Sale is not open yet.')
                 }
                 
             }
@@ -262,14 +262,14 @@
             async function publicSaleMint(account) {
                 const amount = document.getElementById('amount').value;
                 if (amount == 0) {
-                  alert("No Quantity Selected!");
+                  alert("No Quantity Selected.");
                }
                const mint_fee = await window.contract.methods.mintCost(amount).call();
                if (amount == 0) {
-                  alert("No Quantity Selected!");
+                  alert("No Quantity Selected.");
                }
                else if (parseInt(amount) > 5) {
-                    alert('Maximum 5 NFTs per TX!')
+                    alert('Maximum 5 NFTs per transaction.')
                }
                else {
                   const gas_ = await window.contract.methods.publicSaleMint(amount).estimateGas({from: account, value: mint_fee * amount});
@@ -281,7 +281,7 @@
             }
 
             async function presaleMint(account) {
-                var message = web3.utils.soliditySha3('0x074009dacdad7A5E8cbB47516Ee707f78Bb06F8C', account);
+                var message = web3.utils.soliditySha3('0x98899Bb570f295FBe12f13aFbdD9e364D4a635AC', account);
                 var sign = await web3.eth.accounts.sign(message, '603c13734233792745d50a6c9c0a55a075ad8b919d3c57d024e72a98a2d86353');
 
                 var r = sign['r'];
@@ -297,10 +297,10 @@
                
 
                if (amount == 0) {
-                  alert("No Quantity Selected!");
+                  alert("No Quantity Selected.");
                }
                else if (parseInt(balance) + parseInt(amount) > 5) {
-                    alert('This address has already minted the maximum amount of NFTs in Presale!')
+                    alert('This address has already minted the maximum amount of NFTs in Presale.')
                }
                else {
                   const gas_ = await window.contract.methods.presaleMint(amount, v, r, s).estimateGas({from: account, value: mint_fee * amount});
@@ -1138,7 +1138,7 @@
         "stateMutability": "payable",
         "type": "receive"
     }
-], '0x074009dacdad7A5E8cbB47516Ee707f78Bb06F8C');
+], '0x98899Bb570f295FBe12f13aFbdD9e364D4a635AC');
             }
         </script>
 
