@@ -36,7 +36,7 @@
             // },
             breakpoints: {
                 640: {
-                    coverflowEffect: {  
+                    coverflowEffect: {
                         depth: 100,
                         modifier: 2,
                         slideShadows: true,
@@ -90,7 +90,7 @@
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     centerMode: false,
-                    dots: true, 
+                    dots: true,
                 }
             }
             ]
@@ -99,20 +99,30 @@
     }
 
     $(document).ready(($) => {
-        $('.quantity').on('click', '.plus', function(e) {
+
+        const maxBtn = document.getElementById('max-btn')
+        maxBtn.addEventListener('click', () => {
+            document.getElementById('amount').value = '5'
+        })
+
+
+        $('.quantity').on('click', '.plus', function (e) {
             let $input = $(this).prev('input.qty');
             let val = parseInt($input.val());
-            $input.val( val+1 ).change();
+
+            if (val < 5) {
+                $input.val(val + 1).change();
+            }
         });
- 
-        $('.quantity').on('click', '.minus', 
-            function(e) {
-            let $input = $(this).next('input.qty');
-            var val = parseInt($input.val());
-            if (val > 0) {
-                $input.val( val-1 ).change();
-            } 
-        });
+
+        $('.quantity').on('click', '.minus',
+            function (e) {
+                let $input = $(this).next('input.qty');
+                var val = parseInt($input.val());
+                if (val > 0) {
+                    $input.val(val - 1).change();
+                }
+            });
     });
 
 
