@@ -101,10 +101,10 @@
                                 <div class="mint-amount-right">
                                     <form id="myform" method="POST" class="quantity" action="#">
                                         <button type="button" class="qtyminus minus" field="quantity">-</button>
-                                        <input type="text" name="quantity" value="1" class="qty" id="amount" max="5"/>
+                                        <input type="number" max="5" min="0" readonly name="quantity" value="1" class="qty" id="amount" />
                                         <button type="button" class="qtyplus plus" field="quantity">+</button>
                                     </form>
-                                    <a href="#" class="btn">MAX</a>
+                                    <a href="#" id="max-btn" class="btn shadow-none">MAX</a>
                                 </div>
 
                             </div>
