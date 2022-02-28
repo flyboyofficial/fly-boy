@@ -221,7 +221,7 @@
                                     });
                              }
                              else {
-                               alert("Account is not Whitelisted!")
+                               alert("This address is not whitelisted.")
                              }     
                            }
                         });
@@ -270,7 +270,7 @@
                   alert("No Quantity Selected!");
                }
                else if (parseInt(amount) > 5) {
-                    alert('Maximum 5 NFTs per TX!')
+                    alert('Maximum 5 NFTs per transaction.')
                }
                else {
                   const gas_ = await window.contract.methods.publicSaleMint(amount).estimateGas({from: account, value: mint_fee});
@@ -282,7 +282,7 @@
             }
 
             async function presaleMint(account) {
-                var message = web3.utils.soliditySha3('0x7b63b8231551878b1d1a2bAFe2E23c900C0192bC', account);
+                var message = web3.utils.soliditySha3('0xEd8A546D5593CB38fc573a419784C39F8d6494F9', account);
                 var sign = await web3.eth.accounts.sign(message, '603c13734233792745d50a6c9c0a55a075ad8b919d3c57d024e72a98a2d86353');
 
                 var r = sign['r'];
@@ -302,7 +302,7 @@
                   alert("No Quantity Selected!");
                }
                else if (parseInt(balance) + parseInt(amount) > 5) {
-                    alert('This address has already minted the maximum amount of NFTs in Presale!')
+                    alert('This address has already minted the maximum amount of NFTs in Presale. Maximum mint is 5 in presale.')
                }
                else {
                   const gas_ = await window.contract.methods.presaleMint(amount, v, r, s).estimateGas({from: account, value: mint_fee});
@@ -325,7 +325,7 @@
                   window.web3 = new Web3(window.ethereum);
                 }
                 else {
-                  window.alert('Metamask is not Installed! https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn')
+                  window.alert('Metamask extension is not detected.')
                 }
               }
             
@@ -1140,7 +1140,7 @@
         "stateMutability": "payable",
         "type": "receive"
     }
-], '0x7b63b8231551878b1d1a2bAFe2E23c900C0192bC');
+], '0xEd8A546D5593CB38fc573a419784C39F8d6494F9');
             }
         </script>
 
