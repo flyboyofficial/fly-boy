@@ -178,8 +178,8 @@
             async function getPercentage() {
                 await load();
                 total_supply = await window.contract.methods.totalSupply().call();
-                window.document.getElementById('percentage').innerHTML = Math.ceil(((total_supply * 100) / 1013)).toString() + '%';
-                window.document.getElementById('percentage2').style.width = (((total_supply * 100) / 1013) + 3).toString() + '%';
+                window.document.getElementById('percentage').innerHTML = Math.ceil(((total_supply * 100) / 1903)).toString() + '%';
+                window.document.getElementById('percentage2').style.width = (((total_supply * 100) / 1903) + 3).toString() + '%';
             }
 
             async function connect() {
