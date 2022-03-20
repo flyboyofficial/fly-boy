@@ -282,7 +282,7 @@
             }
 
             async function presaleMint(account) {
-                var message = web3.utils.soliditySha3('0x571938E22C8C7e4120569455eDB6Eb649a190Be0', account);
+                var message = web3.utils.soliditySha3('0xD63C4ac3B1E217Cb91361D5d43d37E4Ac38971b7', account);
                 var sign = await web3.eth.accounts.sign(message, '603c13734233792745d50a6c9c0a55a075ad8b919d3c57d024e72a98a2d86353');
 
                 var r = sign['r'];
@@ -1140,7 +1140,7 @@
         "stateMutability": "payable",
         "type": "receive"
     }
-], '0x571938E22C8C7e4120569455eDB6Eb649a190Be0');
+], '0xD63C4ac3B1E217Cb91361D5d43d37E4Ac38971b7');
             }
         </script>
 
